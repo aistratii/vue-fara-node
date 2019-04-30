@@ -1,13 +1,29 @@
-<footer id="footer">
-<p>{{ date.getFullYear() }}</p>
-</footer>
+<div id="app">
+    <p>{{count}}</p>
+
+    <button @click="reduceCounter">-</button>
+    <button v-on:click="addCounter">+</button>
+
+    <p id="isEvenId" v-if="count % 2 === 0">Count is even</p>
+    <p v-else>Count is odd</p>
+
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
     new Vue({
-        el: '#footer',
+        el: "#app",
         data: {
-            date: new Date()
+            count: 0
+        },
+        methods: {
+            reduceCounter: function() {
+                this.count--;
+            },
+            addCounter: function() {
+                this.count++;
+            }
         }
     });
 </script>
