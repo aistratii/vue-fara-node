@@ -1,0 +1,13 @@
+<footer id="footer">
+<p>{{ date.getFullYear() }}</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#footer',
+        data: {
+            date: new Date()
+        }
+    });
+</script>
