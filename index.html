@@ -1,29 +1,58 @@
-<div id="app">
-    <p>{{count}}</p>
-
-    <button @click="reduceCounter">-</button>
-    <button v-on:click="addCounter">+</button>
-
-    <p id="isEvenId" v-if="count % 2 === 0">Count is even</p>
-    <p v-else>Count is odd</p>
-
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script>
-    new Vue({
-        el: "#app",
-        data: {
-            count: 0
-        },
-        methods: {
-            reduceCounter: function() {
-                this.count--;
-            },
-            addCounter: function() {
-                this.count++;
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"/>
+        <link ref="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
+        <title>Currency Converter</title>
+        
+        <style>
+            * {
+                border-radius: 9 !important;
             }
-        }
-    });
-</script>
+            body{
+                background-color: #E7F7F9;
+                font-family: "Poppins", sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>From</label>
+                        <select name="" id="" class="form-control">
+                            <option>usd</option>
+                            <option>eur</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                            <label>To</label>
+                            <select name="" id="" class="form-control">
+                                <option>usd</option>
+                                <option>eur</option>
+                            </select>
+                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <input type="text" placeholder="Amount" class="form-control my-5">
+                        <div class="text-center">
+                            <button class="btn btn-lg btn-primary">Convert</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                       <h1 class="text-center display-2 mt-5">54.03</h1> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
