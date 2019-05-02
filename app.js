@@ -10,9 +10,17 @@ Vue.component("card", {
                 <div class="card-text">
                     {{ content }}
                 </div>
+
+                <button @click="deleteArticle" class="btn btn-danger btn-sm">Delete me</button>
             </div>
         </div>
-    `
+    `,
+
+    methods:{
+        deleteArticle(){
+            this.$emit("delete-article", this.title)
+        }
+    }
 });
 
 new Vue({
@@ -41,5 +49,10 @@ new Vue({
                 content: "(Břetislaw),[9] din nume mai vechi, considerând că erau derivate din numele conducătorului Boemiei Bretislav I. Numele a fost folosit inițial de către membrii mișcării naționale slovace în 1844, ca Bratislav.[9] După primul război mondial, unii reprezentanți non-slovaci ai orașului au încercat să-l redenumească „Wilson City”, în onoarea președintelui american Woodrow Wilson, și pentru a evita încorporarea acestuia în Cehoslovacia. Propunerea a fost respinsă, și numele oficial al orașului a devenit Bratislava în martie 1919, după ce orașul a ajuns să f"
             }
         ]
+    },
+    methods: {
+        removeArticle(event){
+            this.articles = this.articles.filter(article => article.title !== event)
+        }
     }
 });
